@@ -42,6 +42,16 @@ module.exports = function (config) {
       ]
     },
     reporters: ['progress', 'kjhtml'],
+    
+    reporters: ['progress', 'coverage'],
+    preprocessors: {
+    'src/app/**/*.js': ['coverage']
+    },
+    coverageReporter: {
+    type : 'lcov',
+    dir : 'coverage/'
+    },
+    
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
